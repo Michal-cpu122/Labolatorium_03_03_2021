@@ -1,0 +1,76 @@
+//Shop
+
+public class Shop {
+    String address;
+    int size;
+    public Shop(String address, int size){
+        this.address = address;
+        this.size = size;
+    }
+    public void getInformation(){
+        System.out.println("Adress: "+address+"\nSize: "+size);
+    }
+}
+
+---------------------------------------------------------------------
+
+//Bakery
+
+public class Bakery extends Shop{
+    protected String[] products2;
+    public Bakery(String address, int size, String[] products2) {
+        super(address, size);
+        this.products2 = products2;
+    }
+
+    @Override
+    public void getInformation(){
+        super.getInformation();
+
+        System.out.println("Products: ");
+        for(int i = 0;i < products2.length;i++){
+            System.out.println(products2[i]);
+        }
+    }
+}
+
+---------------------------------------------------------------------------
+
+//Bookshop
+
+public class Bookshop extends Shop{
+    protected String[] products1;
+    public Bookshop(String address, int size, String[] products1) {
+        super(address, size);
+        this.products1 = products1;
+    }
+
+    @Override
+    public void getInformation(){
+        super.getInformation();
+
+        System.out.println("Products: ");
+        for(int i = 0;i < products1.length;i++){
+            System.out.println(products1[i]);
+        }
+    }
+}
+
+----------------------------------------------------------------------------
+
+//Wynik
+
+public class Wynik{
+    public static void main(String[] args) {
+        String[] products1 = {"Jak upiec ciasto","Czemu nie ja","Dlaczego ja"};
+        String[] products2 = {"PÄ…czki","Chleb","Gniazdka"};
+
+        Bookshop sklep1 = new Bookshop("Lolkowa 20/1",8,products1);
+        sklep1.getInformation();
+
+        System.out.print("\n");
+
+        Bakery sklep2 = new Bakery("Piekarnikowa 10/2",10,products2);
+        sklep2.getInformation();
+    }
+}
