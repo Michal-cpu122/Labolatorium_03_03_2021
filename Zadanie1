@@ -1,0 +1,61 @@
+//Animal
+
+public class Animal {
+
+   String name;
+   String color;
+
+    public Animal(String name, String color){
+        this.name = name;
+        this.color = color;
+    }
+}
+
+-------------------------------------------------------
+
+//Cat
+
+public class Cat extends Animal{
+
+    String sound;
+
+    public Cat(String name, String color, String sound){
+        super(name,color);
+        this.sound = sound;
+    }
+    public void makeSound(){
+        System.out.println(sound+" does: "+name+" and his color is: "+color);
+    }
+}
+
+-----------------------------------------------------------------
+
+//Dog
+
+public class Dog extends Animal{
+
+    String sound;
+
+    public Dog(String name, String color, String sound){
+        super(name,color);
+        this.sound = sound;
+    }
+    public void makeSound(){
+        System.out.println(sound+" does: "+name+" and his color is: "+color);
+    }
+}
+
+------------------------------------------------------------------
+
+//Wynik
+
+public class Wynik{
+
+    public static void main(String[] args) {
+        Dog dog = new Dog("Killer", "black","Woof");
+        dog.makeSound();
+
+        Cat cat = new Cat("Koko","white","Meow");
+        cat.makeSound();
+    }
+}
